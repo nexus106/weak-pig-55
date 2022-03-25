@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+  <body class="Body">
+    <p class="text-center bg-danger text-light" style="font-size:65px">防災チェッカー</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="border-bottom border-top border-danger" style="font-family:'Caveat'; font-size:37px">Add To List</div>
+                <p class="col-md-8"></p>
+                <input type="text"  id="name" placeholder="やることの内容" class="m-form-text">
+                <button id="set_list" class="btn btn-secondary">リストに追加</button>
+                <p class="col-md-5"></p>
+                <p class="col-md-5"></p>
+                <button type="button" onclick="sendPushNotification()"class="btn btn-secondary">通知テスト</button>
+                <script type="text/javascript">
+                    function sendPushNotification() {
+                        Push.create('テスト', {
+                            body: 'テスト',
+                            icon: 'index.jpg',
+                            timeout: 5000,
+                            onClick: function () {
+                                this.close();
+                                location.href = 'https://hogehoge.jp';
+                            }
+                        });
+                    }
+                </script>
+            </div>
+            <div class="col-md-4">
+                <div class="border-bottom border-top border-danger" style="font-family:'Caveat'; font-size:37px">List</div>
+                <h4>・家にいたときのやることリスト</h4>
+                <table  id="stay_home_list" class="design03">
+                    <thead>
+                        <tr>
+                            <td>チェック</td>
+                            <td>やることの内容</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <img class="rounded-circle img-fluid img-thumbnail" src="img/jig_intern.png">
+            </div>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

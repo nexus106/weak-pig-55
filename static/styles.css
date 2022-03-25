@@ -1,0 +1,39 @@
+
+.Body{
+  background-color: beige;
+}
+
+.m-form-text {
+  height: 2.4em;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 0 0 1px #ccc inset;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.m-form-text:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgb(33, 150, 243) inset;
+}
+
+.design03 {
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+ }
+ .design03 tr:nth-child(2n+1) {
+  background-color: #f5f5f5;
+ }
+
+ .design03 tr:nth-child(2n){
+   background: white;
+ }
+
+ .design03 th,
+ .design03 td {
+  padding: 10px;
+  border-width: 1px 0px; 
+ }
